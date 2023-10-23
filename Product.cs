@@ -17,11 +17,12 @@ namespace Lab1_CSharp
     }
     internal static class ProductListExtensions
     {
-        internal static void AddUnique(this List<Product> productList, Product productToAdd)
+        internal static bool AddUnique(this List<Product> productList, Product productToAdd)
         {           
             if (!productList.Any(p => p.Code == productToAdd.Code))
             {
                 productList.Add(productToAdd);
+                return true;
             }
             else
             {
